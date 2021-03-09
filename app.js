@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const fetch = require('node-fetch');
 
 const { dataTransformation } = require('./public/js/data/dataTransformation');
 
@@ -11,8 +10,10 @@ app
 
 //routes
 app.get('/', (req, res) => {
-    dataTransformation();
-    res.render('pages/overview')
+    dataTransformation()
+        .then(response => {
+            res.render('pages/overview', response)
+        });
 })
 
 app.get('/:id', (req, res) => {

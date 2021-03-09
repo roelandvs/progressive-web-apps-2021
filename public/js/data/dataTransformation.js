@@ -1,8 +1,10 @@
-import { fetchAPI } from '../helpers/fetchAPI'
+const { overViewEndpoint } = require('./endpoints');
+const { fetchAPI } = require('../helpers/fetchAPI');
+const { turnToJSON } = require('../utils/turnToJSON');
 
-const dataTransformation = () => {
-   fetchAPI(overViewEndpoint)
-    .then(console.log)
+function dataTransformation() {
+    return fetchAPI(overViewEndpoint)
+        .then(turnToJSON)
 };
 
 module.exports = { dataTransformation };

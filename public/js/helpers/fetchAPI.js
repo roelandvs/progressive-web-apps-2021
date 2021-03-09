@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 function fetchAPI(endpoint, id, detailEndpoints) {
     const baseUrl = 'https://api.spacexdata.com/v4';
 
@@ -13,3 +15,5 @@ function fetchAPI(endpoint, id, detailEndpoints) {
 	    return Promise.all(SpacexDetailDatasets);
     }
 };
+
+module.exports = { fetchAPI };
