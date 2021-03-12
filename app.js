@@ -12,7 +12,7 @@ app
 app.get('/', (req, res) => {
     dataTransformation()
         .then(response => {
-            res.render('pages/overview', response)
+            res.render('pages/overview', { data: response })
         });
 })
 
