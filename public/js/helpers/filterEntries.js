@@ -15,7 +15,7 @@ function filterEntries(originalEndpoint, secondEndpoints) {
 
     const cleanObject = {
         launchInfo: {
-            launch_date_utc: launchDataset.date_utc,
+            launch_date_local: launchDataset.date_local,
             launch_date_precision: launchDataset.date_precision,
             launch_number: launchDataset.flight_number,
             launch_name: launchDataset.name,

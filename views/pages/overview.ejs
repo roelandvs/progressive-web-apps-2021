@@ -10,24 +10,11 @@
     <% for (month in data) {
         if (data[month].length) { %>
         <section>
-            <h2><%= month %></h2>
-            <ol>
-            <% data[month].forEach(function(launch) { %>
-                <li>
-                    <a href="/<%= launch.id %>">
-                        <p><%= launch.launch_day %>   <%= launch.launch_month %></p>
-                        <section>
-                            <h3><%= launch.name %></h3>
-                            <p>Launch number: <span><%= launch.flight_number %></span></p>
-                            <p>Launch time: <span><%= launch.launch_hours %>:<%= launch.launch_minutes %></span></p>
-                        </section>
-                    </a>
-                </li>
-            <% }) %>
-            </ol>
+            <%- include('../partials/launchContent') %>
         </section>
         <% }
     } %>
+    
 </body>
 
 </html>
