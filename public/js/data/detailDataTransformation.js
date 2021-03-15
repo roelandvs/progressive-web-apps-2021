@@ -1,5 +1,6 @@
 const { currentEndpoint } = require('./endpoints');
 const { fetchAPI } = require('../helpers/fetchAPI');
+const { filterEntries } = require('../helpers/filterEntries');
 const { 
     turnToJSON, 
     turnMultipleToJSON 
@@ -27,8 +28,9 @@ function detailDataTransformation(id) {
             return fetchAPI(response, id, detailEndpoints);
         })
         .then(turnMultipleToJSON)
-        .then()
-        // .then(console.log)
+        .then(response => {
+            return filterEntries(singleEndpoint, response);
+        })
 };
 
 module.exports = { detailDataTransformation };
