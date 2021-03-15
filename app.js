@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 
 const { dataTransformation } = require('./public/js/data/dataTransformation');
+const { detailDataTransformation } = require('./public/js/data/detailDataTransformation');
 
 app
     .use(express.static('public'))
@@ -17,7 +18,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:id', (req, res) => {
-    res.render('pages/detail')
+    detailDataTransformation(req.params.id)
+        .then(response => {
+            res.render('pages/detail', { data: response })
+        });
 })
 
 app.listen(port, () => {

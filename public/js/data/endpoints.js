@@ -5,5 +5,5 @@ const currentEndpoint = '/launches/';
 module.exports = {
     baseUrl,
     overViewEndpoint,
-    currentEndpoint
+    currentEndpoint,
 };
