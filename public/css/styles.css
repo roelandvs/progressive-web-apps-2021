@@ -6,6 +6,8 @@
 
 :root {
     --main-top: 85vh;
+    --background-position: top center;
+    --background-url: ;
 }
 
 body {
@@ -163,7 +165,8 @@ a {
     z-index: -2;
     background-repeat: no-repeat;
     background-size:  auto 100vh;
-    background-position: top center;
+    background-position: var(--background-position);
+    background-image: var(--background-url);
 }
 
 body > section > p {

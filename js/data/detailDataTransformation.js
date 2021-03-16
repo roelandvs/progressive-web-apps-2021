@@ -33,7 +33,6 @@ function detailDataTransformation(id) {
             return filterEntries(singleEndpoint, response);
         })
         .then(transformEntries)
-        // .then(positionMain)
 };
 
 module.exports = { detailDataTransformation };
