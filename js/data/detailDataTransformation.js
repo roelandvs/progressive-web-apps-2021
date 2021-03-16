@@ -2,7 +2,6 @@ const { currentEndpoint } = require('./endpoints');
 const { fetchAPI } = require('../helpers/fetchAPI');
 const { filterEntries } = require('../helpers/filterEntries');
 const { transformEntries } = require('../helpers/transformEntries');
-const { positionMain } = require('../helpers/positionMain');
 const { 
     turnToJSON, 
     turnMultipleToJSON 
@@ -34,7 +33,7 @@ function detailDataTransformation(id) {
             return filterEntries(singleEndpoint, response);
         })
         .then(transformEntries)
-        .then(positionMain)
+        // .then(positionMain)
 };
 
 module.exports = { detailDataTransformation };
