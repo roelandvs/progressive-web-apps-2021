@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const { dataTransformation } = require('./public/js/data/dataTransformation');
-const { detailDataTransformation } = require('./public/js/data/detailDataTransformation');
+const { dataTransformation } = require('./js/data/dataTransformation');
+const { detailDataTransformation } = require('./js/data/detailDataTransformation');
 
 app
     .use(express.static('public'))
