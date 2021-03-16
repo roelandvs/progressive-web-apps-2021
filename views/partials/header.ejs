@@ -4,13 +4,13 @@
 
 <div class="img-container">
     <% if (data.launch.reddit_link) { %>
-    <a href="<%= data.launch.reddit_link %>">
+    <a href="<%= data.launch.reddit_link %>" target="_blank">
         <img src="./img/reddit-icon.svg" alt="reddit link">
     </a>
     <% } %>
 
     <% if (data.launch.launch_links.wikipedia) { %>
-    <a href="<%= data.launch.launch_links.wikipedia %>">
+    <a href="<%= data.launch.launch_links.wikipedia %>" target="_blank">
         <img src="./img/wiki-icon.svg" alt="wikipedia link">
     </a>
     <% } %>
