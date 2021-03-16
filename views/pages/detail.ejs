@@ -9,7 +9,9 @@
         <%- include('../partials/header') %>
     </header>
     <main>
+        <% if (data.payload && data.payload.mass_kg !== 'null') { %>
         <%- include('../partials/payload') %>
+        <% } %>
         <%- include('../partials/rocket') %>
         <%- include('../partials/launchpad') %>
     </main>

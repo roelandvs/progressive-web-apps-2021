@@ -22,7 +22,7 @@ function transformEntries(dataset) {
     rocket.height.meters = rocket.height.meters + ' M';
     rocket.diameter.meters = rocket.diameter.meters + ' M';
     
-    if (payload.mass_kg !== null) {
+    if (payload && payload.mass_kg !== null) {
         payload.mass_kg = payload.mass_kg.toLocaleString('de-DE') + ' KG';
     };
 
