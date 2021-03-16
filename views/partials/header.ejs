@@ -1,21 +1,21 @@
-<h1><%= data.launchInfo.launch_name %></h1>
-<p><%= data.launchInfo.launch_date %></p>
-<p><%= data.launchInfo.launch_time %></p>
+<h1><%= data.launch.launch_name %></h1>
+<p><%= data.launch.launch_date %></p>
+<p><%= data.launch.launch_time %></p>
 
 <div class="img-container">
-    <% if (data.launchInfo.reddit_link) { %>
-    <a href="<%= data.launchInfo.reddit_link %>">
+    <% if (data.launch.reddit_link) { %>
+    <a href="<%= data.launch.reddit_link %>">
         <img src="./img/reddit-icon.svg" alt="reddit link">
     </a>
     <% } %>
 
-    <% if (data.launchInfo.launch_links.wikipedia) { %>
-    <a href="<%= data.launchInfo.launch_links.wikipedia %>">
+    <% if (data.launch.launch_links.wikipedia) { %>
+    <a href="<%= data.launch.launch_links.wikipedia %>">
         <img src="./img/wiki-icon.svg" alt="wikipedia link">
     </a>
     <% } %>
 </div>
 
-<div>
+<div class="background-overlay">
     <div></div>
 </div>

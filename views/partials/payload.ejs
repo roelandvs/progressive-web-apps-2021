@@ -1,0 +1,14 @@
+<section class="detail-section">
+    <h2>Payload</h2>
+    <p><%= data.payload.name %></p>
+    <ul>
+        <li>Type <span><%= data.payload.type %></span></li>
+        <li>Customer <span><%= data.payload.customers %></span></li>
+        <li>Manufacturer <span><%= data.payload.manufacturers %></span></li>
+        <li>Nationality <span><%= data.payload.nationality %></span></li>
+        <% if (data.payload.mass_kg) { %>
+        <li>Weight <span><%= data.payload.mass_kg %></span></li>
+        <% } %>
+        <li>Orbit <span><%= data.payload.orbit %></span></li>
+    </ul>
+</section>

@@ -14,7 +14,7 @@ function filterEntries(originalEndpoint, secondEndpoints) {
     };
 
     const cleanObject = {
-        launchInfo: {
+        launch: {
             launch_date_local: launchDataset.date_local,
             launch_date_precision: launchDataset.date_precision,
             launch_number: launchDataset.flight_number,
@@ -22,49 +22,48 @@ function filterEntries(originalEndpoint, secondEndpoints) {
             launch_details: launchDataset.details,
             launch_links: launchDataset.links,
         },
-        payloadInfo: payloadDataset ? {
+        payload: payloadDataset ? {
             customers: payloadDataset.customers,
             dragon: payloadDataset.dragon,
             manufacturers: payloadDataset.manufacturers,
             mass_kg: payloadDataset.mass_kg,
-            payload_name: payloadDataset.name,
+            name: payloadDataset.name,
             nationality: payloadDataset.nationalities,
-            payload_name: payloadDataset.name,
             orbit: payloadDataset.orbit,
             type: payloadDataset.type,
         } : null,
-        launchpadInfo: {
-            launchpad_name: launchpadDataset.name,
-            launchpad_name_full: launchpadDataset.full_name,
-            launchpad_details: launchpadDataset.details,
-            launch_attempts: launchpadDataset.launch_attempts,
-            launch_successes: launchpadDataset.launch_successes,
-            long: launchpadDataset.longitude,
+        launchpad: {
+            name: launchpadDataset.name,
+            name_full: launchpadDataset.full_name,
+            details: launchpadDataset.details,
+            attempts: launchpadDataset.launch_attempts,
+            successes: launchpadDataset.launch_successes,
+            lng: launchpadDataset.longitude,
             lat: launchpadDataset.latitude,
             region: launchpadDataset.region,
             location: launchpadDataset.locality,
         },
-        rocketInfo: {
-            rocket_name: rocketDataset.name,
-            rocket_mass_kg: rocketDataset.mass.kg,
-            rocket_height: rocketDataset.height,
-            rocket_succes_pct: rocketDataset.success_rate_pct,
+        rocket: {
+            name: rocketDataset.name,
+            mass_kg: rocketDataset.mass.kg,
+            height: rocketDataset.height,
+            succes_pct: rocketDataset.success_rate_pct,
             boosters: rocketDataset.boosters,
             cost_per_launch: rocketDataset.cost_per_launch,
-            rocket_description: rocketDataset.description,
-            rocket_diameter_meters: rocketDataset.diameter.meters,
+            description: rocketDataset.description,
+            diameter: rocketDataset.diameter,
             first_flight: rocketDataset.first_flight,
             payload_weights: rocketDataset.payload_weights,
             images: rocketDataset.flickr_images,
             engine: {
-                engine_layout: rocketDataset.engines.layout,
-                engine_number: rocketDataset.engines.number,
-                engine_layout: rocketDataset.engines.layout,
+                layout: rocketDataset.engines.layout,
+                number: rocketDataset.engines.number,
+                layout: rocketDataset.engines.layout,
             },
             stages: {
-                stages_number: rocketDataset.stages,
-                stages_first: rocketDataset.first_stage,
-                stages_second: rocketDataset.second_stage,
+                number: rocketDataset.stages,
+                first: rocketDataset.first_stage,
+                second: rocketDataset.second_stage,
             }
         }
     };
