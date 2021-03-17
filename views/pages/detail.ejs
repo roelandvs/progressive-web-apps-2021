@@ -15,13 +15,15 @@
         <%- include('../partials/rocket') %>
         <%- include('../partials/launchpad') %>
     </main>
+    
     <script>
-        let backgroundUrl = '<%= data.rocket.images[2] %>'
-        let backgroundPosition = 'top center'
+        let backgroundUrl = '<%= data.rocket.images[2] %>';
+        let backgroundPosition = 'top center';
         <% if (data.rocket.name === 'Falcon Heavy') { %>
-            backgroundPosition = 'center center'
-        <% } %>
+            backgroundPosition = 'center center';
+        <% }; %>
     </script>
+
     <script src="./js/positionMain.js"></script>
     <script src="./js/addBackgroundImg.js"></script>
 </body>
