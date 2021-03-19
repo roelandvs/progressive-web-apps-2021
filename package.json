@@ -11,7 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
     "prebuild:css": "rimraf \"public/css\"",
-    "build:css": "node ./scripts/build-css.js"
+    "build:css": "node ./scripts/build-css.js",
+    "prebuild:js": "rimraf \"public/js\"",
+    "build:js": "node ./scripts/build-js.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,7 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2",
     "nodemon": "^2.0.7",
     "rimraf": "^3.0.2"
   }
