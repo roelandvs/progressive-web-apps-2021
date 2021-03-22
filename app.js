@@ -10,6 +10,10 @@ app
     .set('view engine', 'ejs')
 
 //routes
+app.get('/offline', (req, res) => {
+    res.render('pages/offline')
+})
+
 app.get('/', (req, res) => {
     dataTransformation()
         .then(response => {
