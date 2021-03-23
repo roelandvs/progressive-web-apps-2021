@@ -7,7 +7,7 @@ const { dataTransformation } = require('./js/data/dataTransformation');
 const { detailDataTransformation } = require('./js/data/detailDataTransformation');
 
 app
-    .use(express.static('public'))
+    .use(express.static('./public'))
     .use(compression())
     .set('view engine', 'ejs')
 
