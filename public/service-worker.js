@@ -68,8 +68,11 @@ self.addEventListener('fetch', e => {
                 
                 return res;
             })
-            .catch(err => caches.match(e.request)
-                .then(res => res))
-    )
+            .catch(() => {
+                return caches
+                    .open(cacheName)
+                    .then(cache => cache.match('/offline'))
+                // .then(res => res))
+            }))
 });
 
