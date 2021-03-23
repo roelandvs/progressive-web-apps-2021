@@ -1,7 +1,7 @@
 const cacheName = 'v1';
 const cacheAssets = [
-    '/css/style.css',
-    '/js/bundle.min.js',
+    './css/style.css',
+    './js/bundle.min.js',
     '/offline'
 ];
 
@@ -51,28 +51,54 @@ self.addEventListener('activate', e => {
 
 //call fetch event for offline pages
 self.addEventListener('fetch', e => {
-    console.log('Service Worker: Fetching')
-    
-    e.respondWith(
-        fetch(e.request)
-            .then(res => {
-                //make clone of response
-                const resClone = res.clone();
-                //open cache
-                caches
-                    .open(cacheName)
-                    .then(cache => {
-                        //add response to cache
-                        cache.put(e.request, resClone);
-                    });
-                
-                return res;
-            })
-            .catch(() => {
-                return caches
-                    .open(cacheName)
-                    .then(cache => cache.match('/offline'))
-                // .then(res => res))
-            }))
+    console.log('Service Worker: Fetching');
+
+    // if (isCoreGetRequest(e.request)) {
+    //     console.log('core request');
+    //     e.respondWith(
+    //         caches
+    //             .open(cacheAssets)
+    //             .then(cache => {
+    //                 cache.match(e.request.url)
+    //             }))
+    // } else {
+    //     console.log('geen core request');
+
+        e.respondWith(
+            fetch(e.request)
+                .then(res => {
+                    //make clone of response
+                    const resClone = res.clone();
+                    //open cache
+                    caches
+                        //cache assets
+                        .open(cacheName)
+                        .then(cache => {
+                            //add response to cache
+                            cache.put(e.request, resClone);
+                        });
+                    
+                    return res;
+                })
+
+                .catch((err) => {
+                    console.log(err)
+                    return caches
+                        .open(cacheName)
+                        .then(cache => cache.match('/offline'))
+                    // .then(res => res))
+                }))
+            // }
 });
+
+function isCoreGetRequest(request) {
+    return (
+        request.method === "GET" && cacheAssets.includes(getPathName(request.url))
+    );
+};
+
+function getPathName(requestUrl) {
+    const url = new URL(requestUrl);
+    return url.pathname;
+};
 
