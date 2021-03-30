@@ -1,4 +1,4 @@
-const cacheName = 'v2';
+const cacheName = 'v1';
 const cacheAssets = [
     '/css/style.css',
     '/js/bundle.min.js',
