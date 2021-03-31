@@ -167,3 +167,9 @@ My app is very small, so it's pretty quick to begin with. To improve the loading
 ### After Critical Rendering Path
 <img width="1007" alt="Screenshot 2021-03-31 at 14 35 22" src="https://user-images.githubusercontent.com/59770136/113145522-cf5c0f80-922e-11eb-9fce-1a4fef987ce6.png">
 Im using `Gulp` to minify my clientside CSS and JS. Compression is used to compress the files that are send to the user and link preload handles that the image starts loading at the moment that the head is read, instead of after it encounters the link in my css. This improved the content full paint by a few seconds.
+
+## Sources
+[Jonah Meijers](https://github.com/theonejonahgold)
+[Vincent van Leeuwen](https://github.com/Vincentvanleeuwen)
+[Ben Langenberg](https://github.com/benl95)
+[Merlijn Bergevoet](https://github.com/mbergevoet)
