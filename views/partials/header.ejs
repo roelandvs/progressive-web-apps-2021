@@ -2,6 +2,11 @@
 <p><%= data.launch.launch_date %></p>
 <p><%= data.launch.launch_time %></p>
 
+<% if (data.launch.launch_details) { %>
+    <p class="launch-details"><%= data.launch.launch_details %></p>
+<% } %>
+
+
 <div class="img-container">
     <% if (data.launch.reddit_link) { %>
     <a href="<%= data.launch.reddit_link %>" target="_blank">
