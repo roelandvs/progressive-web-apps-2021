@@ -5,13 +5,22 @@
 
 This project contains an application that shows the upcoming launches op SpaceX. The site exists out of an overview page of all the launches, and a detail page of each launch. This page contains specific information of the launch such as the crew, the goal of the launch, which rocket is being used etc.
 
-The goal of this project is to convert a clientside rendered website to a serverside website. 
+The goal of this project is to convert a clientside rendered website to a serverside website and using an service worker. 
 
 This project uses:
-
 - `Express`
 - `EJS`
 - `SpaceX API`
+- `Service worker`
+- `Manifest.json`
+
+Used packeges:
+- `Compression`
+- `EJS`
+- `Express`
+- `Node-fetch`
+- `Nodemon`
+- `Rimraf`
 
 ## SpaceX API
 To get the data of the website I'm using the [SPACEX API](https://docs.spacexdata.com/). This API contains a wide range of information about SpaceX such as launches, history, missions, rockets etc. There is no authentication required to use this public API.
@@ -145,24 +154,16 @@ Install dependencies:
 npm init
 ```
 
-## Actor Diagram
-<details>
-    <summary> Actor Diagram 1</summary>
-    <img width="1193" alt="Screenshot 2021-02-09 at 10 50 18" src="https://user-images.githubusercontent.com/59770136/107346515-0fbbce80-6ac5-11eb-91a7-daf3475dad34.png">
-</details>
+## Critical Rendering Path
+My app is very small, so it's pretty quick to begin with. To improve the loading time I'm still using:
+- `Gulp`
+- `Compression`
+- `<link rel="preload" as="image" href="<link>">`
 
-<details>
-    <summary> Actor Diagram 2</summary>
-    <img width="1217" alt="Screenshot 2021-03-02 at 12 06 58" src="https://user-images.githubusercontent.com/59770136/109639845-fcde6c00-7b4f-11eb-98e3-08e2b72ff76a.png">
-</details>
+### Before Critical Rendering Path
+<img width="1007" alt="Screenshot 2021-03-31 at 14 40 13" src="https://user-images.githubusercontent.com/59770136/113145760-219d3080-922f-11eb-9bb4-1eb1db659f9e.png">
 
-## Interaction Diagram
-<details>
-    <summary> Interaction Diagram 1</summary>
-    <img width="1450" alt="Screenshot 2021-02-09 at 10 49 42" src="https://user-images.githubusercontent.com/59770136/107346520-12b6bf00-6ac5-11eb-920c-652a0c234844.png">
-</details>
 
-<details>
-    <summary> Interaction Diagram 2</summary>
-    <img width="1597" alt="Screenshot 2021-03-02 at 12 07 14" src="https://user-images.githubusercontent.com/59770136/109639777-e0daca80-7b4f-11eb-956d-35a9dc41f6f9.png">
-</details>
+### After Critical Rendering Path
+<img width="1007" alt="Screenshot 2021-03-31 at 14 35 22" src="https://user-images.githubusercontent.com/59770136/113145522-cf5c0f80-922e-11eb-9fce-1a4fef987ce6.png">
+Im using `Gulp` to minify my clientside CSS and JS. Compression is used to compress the files that are send to the user and link preload handles that the image starts loading at the moment that the head is read, instead of after it encounters the link in my css. This improved the content full paint by a few seconds.
