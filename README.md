@@ -1,7 +1,7 @@
 # Progressive Web Apps
 <img width="2006" alt="Screenshot 2021-03-02 at 12 26 59" src="https://user-images.githubusercontent.com/59770136/109641964-afafc980-7b52-11eb-8d2a-6cbc28714e21.png">
 
-[link to the site](https://roelandvs.github.io/web-app-from-scratch-2021/api_site/#launches)  
+[link to the site](https://space-x-serverside.herokuapp.com/)  
 
 This project contains an application that shows the upcoming launches op SpaceX. The site exists out of an overview page of all the launches, and a detail page of each launch. This page contains specific information of the launch such as the crew, the goal of the launch, which rocket is being used etc.
 
