@@ -10,6 +10,7 @@
   "scripts": {
     "test": "nodemon app.js",
     "start": "node app.js",
+    "build": "npm run build:css && npm run build:js",
     "prebuild:css": "rimraf \"public/css\"",
     "build:css": "node ./scripts/build-css.js",
     "prebuild:js": "rimraf \"public/js\"",
